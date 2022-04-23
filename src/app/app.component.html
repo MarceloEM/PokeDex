@@ -1,0 +1,26 @@
+
+<body>
+  <h1 align="center">PokeDex</h1>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <div *ngFor="let mon of monList" align="center" class="pixel" class="margen">
+    <h1 align="right">{{mon.id}} </h1>
+    <h3>{{mon.name}}</h3>
+    <p class="bold">Type:</p>
+    <p *ngFor="let type of mon.types">{{type.type.name}}</p>
+    <img src="{{mon.sprites.versions['generation-v']['black-white'].animated.front_default}}"/>
+    <p class="bold">Base Stats</p>
+    <div class="row">
+      <p>Hp: {{mon.stats[0].base_stat}} </p>
+      <p>Att: {{mon.stats[1].base_stat}} </p>
+      <p>Def: {{mon.stats[2].base_stat}} </p>
+      <p>Spa: {{mon.stats[3].base_stat}} </p>
+      <p>Spd: {{mon.stats[4].base_stat}} </p>
+      <p>Spe: {{mon.stats[5].base_stat}} </p>
+    </div>
+    <p class="bold">Abilities:</p>
+    <div *ngFor="let ability of mon.abilities"> 
+      <p> {{ability.ability.name}} </p>
+    </div>
+  </div>
+  <p>by Marcelo Estrada</p>
+</body>
